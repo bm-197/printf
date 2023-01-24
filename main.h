@@ -1,5 +1,5 @@
-#ifndef HOLBERTON_H
-#define HOLBERTON_H
+#ifndef MAIN_H
+#define MAIN_H
 #include <stdarg.h>
 int _printf(const char *format, ...);
 int print_char(va_list ap);
@@ -15,17 +15,17 @@ int print_str_reverse(va_list ap);
 int print_ptr(va_list ap);
 int print_rot13(va_list ap);
 int print_percent(va_list ap __attribute__((unused)));
-int print_number(int n);
-int print_unsigned_number(unsigned int n);
+int print_number(int num);
+int print_unsigned_number(unsigned int num);
 int _putchar(char c);
 int _puts(char *str, int ascii);
-int _nbr_len(int prmNumber);
+int _nbr_len(int primeNumber);
 int _strlen_recursion(char *s);
-int convert_alpha_numeric(int nb, int upper);
-char *convert_rot13(char *str);
-char *convert_base(unsigned long nb, unsigned int base, int upper);
-char *_strdup(char *str);
-char *convert_base_pointer(unsigned long p);
+int convert_alpha_numeric(int num, int upper);
+char *convert_rot13(char *string);
+char *convert_base(unsigned long num, unsigned int bases, int upper);
+char *_strdup(char *string);
+char *convert_base_pointer(unsigned long ptr);
 
 /**
  * struct flags_printf - struct conversion to function

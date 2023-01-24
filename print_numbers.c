@@ -1,28 +1,28 @@
 #include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "holberton.h"
+#include "main.h"
 
 /**
  * print_unsigned_number - print unsigned number
- * @n: unsigned int to print
+ * @num: unsigned int to print
  * Return: number of printed chars
  */
 
-int print_unsigned_number(unsigned int n)
+int print_unsigned_number(unsigned int num)
 {
 	int count = 0;
-	unsigned int nb = n;
+	unsigned int number = num;
 
-	if (nb <= 9)
+	if (number <= 9)
 	{
-		_putchar(nb + '0');
+		_putchar(number + '0');
 		return (1);
 	}
-	if (nb > 9)
+	if (number > 9)
 	{
-		count = print_unsigned_number(nb / 10) + 1;
-		_putchar(nb % 10 + '0');
+		count = print_unsigned_number(number / 10) + 1;
+		_putchar(number % 10 + '0');
 		return (count);
 	}
 	return (0);
@@ -30,48 +30,48 @@ int print_unsigned_number(unsigned int n)
 
 /**
  * print_number - display the number contained in an int
- * @n: int to print
+ * @num: int to print
  * Return: number of char
  */
-int print_number(int n)
+int print_number(int num)
 {
-	unsigned int nb;
+	unsigned int number;
 	int count = 0;
 
-	nb = n;
-	if (n < 0)
+	number = num;
+	if (number < 0)
 	{
 		_putchar('-');
 		count++;
-		nb = -nb;
+		number = -number;
 	}
-	if (nb <= 9)
+	if (number <= 9)
 	{
-		count += _putchar(nb + '0');
+		count += _putchar(number + '0');
 		return (count);
 	}
-	if (nb > 9)
+	if (number > 9)
 	{
-		count += print_number(nb / 10) + 1;
-		_putchar(nb % 10 + '0');
+		count += print_number(number / 10) + 1;
+		_putchar(number % 10 + '0');
 		return (count);
 	}
 	return (0);
 }
 /**
  * _nbr_len - length of a number
- * @prmNumber: number
+ * @primeNumber: number
  * Return: length of the number
  */
 
-int _nbr_len(int prmNumber)
+int _nbr_len(int primeNumber)
 {
 	int cLoop = 0, number;
 
-	if (prmNumber == 0)
+	if (primeNumber == 0)
 		return (1);
 
-	number = prmNumber;
+	number = primeNumber;
 
 	if (number < 0)
 	{
@@ -94,13 +94,13 @@ int _nbr_len(int prmNumber)
  * Return: converted string
  */
 
-char *_itoa(int prmNumber)
+char *_itoa(int primeNumber)
 {
 	char *s;
 	int cLoop;
 	long number;
 
-	number = prmNumber;
+	number = primeNumber;
 	cLoop = _nbr_len(number);
 	s = malloc(sizeof(char) * cLoop + 1);
 

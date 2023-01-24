@@ -1,6 +1,6 @@
 #include <unistd.h>
 #include <stdlib.h>
-#include "holberton.h"
+#include "main.h"
 
 /**
  * _putchar - writes character to stdout
@@ -50,15 +50,15 @@ int _puts(char *str, int ascii)
 /**
  * _strlen_recursion - return the length of a string
  *
- * @s: char pointer
+ * @str: char pointer
  *
  * Return: the length of a string
  */
-int _strlen_recursion(char *s)
+int _strlen_recursion(char *str)
 {
-	if (*s != '\0')
+	if (*str != '\0')
 	{
-		return (_strlen_recursion(s + 1) + 1);
+		return (_strlen_recursion(str + 1) + 1);
 	}
 	else
 	{
@@ -70,31 +70,31 @@ int _strlen_recursion(char *s)
  * _strdup - a pointer to a newly allocated space in memory,
  *           which contains a copy of the string given as a parameter.
  *
- * @str: char pointer to copy
+ * @string: char pointer to copy
  *
  * Return: a new char pointer
  */
-char *_strdup(char *str)
+char *_strdup(char *string)
 {
-	char *s;
-	int cLoop;
+	char *str;
+	int cLp;
+
+	if (string == NULL)
+	{
+		return (NULL);
+	}
+
+	str = malloc(sizeof(char) * (_strlen_recursion(string) + 1));
 
 	if (str == NULL)
 	{
 		return (NULL);
 	}
 
-	s = malloc(sizeof(char) * (_strlen_recursion(str) + 1));
-
-	if (s == NULL)
+	for (cLp = 0; cLp < _strlen_recursion(string) + 1; cLp++)
 	{
-		return (NULL);
+		str[cLp] = string[cLp];
 	}
 
-	for (cLoop = 0; cLoop < _strlen_recursion(str) + 1; cLoop++)
-	{
-		s[cLoop] = str[cLoop];
-	}
-
-	return (s);
+	return (str);
 }
