@@ -3,7 +3,7 @@
 /**
  * _printf - produce output according to a format
  * @format: the format
- *
+ * @...: list of arguments
  * Return: 1 if successful
  */
 int _printf(const char *format, ...)
@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			switch (*format)
+			switch (*(format))
 			{
 				case 'c':
 					_putchar(va_arg(arg, int));
