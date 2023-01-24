@@ -8,11 +8,11 @@
  */
 int _printf(const char *format, ...)
 {
+	int len = 0;
 	va_list arg;
 
 	va_start(arg, format);
 
-	char a = 'a', A = 'A', len = 0;
 
 	while (*format != '\0')
 	{

@@ -70,8 +70,8 @@ void print_octal(unsigned int num)
  */
 void print_hexadecimal(unsigned int n, char flag)
 {
-	int i = 0, start, end, j;
-	char *hex_arr, temp;
+	int i = 0;
+	char *hex_arr;
 
 	hex_arr = malloc(sizeof(char) * (i + 1));
 
