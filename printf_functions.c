@@ -7,8 +7,9 @@
  * Return: nothing
  */
 
-void print_number(int n)
+int print_number(int n)
 {
+	int i = 0;
 
 	if (n < 0)
 	{
@@ -17,8 +18,12 @@ void print_number(int n)
 	}
 
 	if ((n / 10) != 0)
+	{
 		print_number(n / 10);
+		i++;
+	}
 	_putchar(n % 10 + '0');
+	return (i);
 }
 
 /**
@@ -28,13 +33,15 @@ void print_number(int n)
  * Return: nothing
  */
 
-void print_unsigned_int(unsigned int n)
+int print_unsigned_int(unsigned int n)
 {
+	int i = 0;
 
 	if ((n / 10) != 0)
 		print_unsigned_int(n / 10);
 
 	_putchar(n % 10 + '0');
+	return (i);
 }
 
 /**
@@ -45,7 +52,7 @@ void print_unsigned_int(unsigned int n)
  * Return: nothing
  */
 
-void print_string(char *s)
+int print_string(char *s)
 {
 	char *str;
 	int i = 0;
@@ -53,7 +60,7 @@ void print_string(char *s)
 	str = malloc(sizeof(char) * _strlen(s) + 1);
 
 	if (str == NULL)
-		return;
+		return (0);
 
 	while (s[i] != '\0')
 	{
@@ -65,4 +72,5 @@ void print_string(char *s)
 	_puts(str);
 
 	free(str);
+	return (i);
 }
